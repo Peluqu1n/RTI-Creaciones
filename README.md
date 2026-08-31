@@ -1,3 +1,2 @@
 # RTI Creaciones
-
-Página estática para accesorios, lista para GitHub Pages o Cloudflare Pages.
+Logo y favicon usan exactamente el archivo de logo proporcionado.

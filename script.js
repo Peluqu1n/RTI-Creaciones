@@ -1,1 +1,1 @@
-function ask(product){alert('Hola RTI Creaciones! Quiero consultar por: '+product+'\\n\\nPodés conectar este botón a tu WhatsApp cuando tengas el número.');}
+function consultar(producto){alert('Hola RTI Creaciones! Quiero consultar por: '+producto+'\n\nCuando tengas tu número de WhatsApp, puedo conectar este botón directamente al chat.');}
