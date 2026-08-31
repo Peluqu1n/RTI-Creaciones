@@ -1,0 +1,1 @@
+function ask(product){alert('Hola RTI Creaciones! Quiero consultar por: '+product+'\\n\\nPodés conectar este botón a tu WhatsApp cuando tengas el número.');}
