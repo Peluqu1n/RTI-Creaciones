@@ -11,7 +11,7 @@
 <header>
   <a class="brand" href="#inicio"><img src="logo.png" alt="RTI Creaciones"></a>
   <nav><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
-  <a class="topbtn" href="#productos">Ver colección →</a>
+  <button class="cart-btn" onclick="abrirCarrito()" aria-label="Abrir carrito">🛒 <span>Carrito</span><i class="cart-count">0</i></button>
 </header>
 
 <main>
@@ -29,10 +29,10 @@
 <section class="section" id="productos">
   <div class="section-head"><div><small>01 — COLECCIÓN</small><h2>Elegí tu <em>favorito.</em></h2></div><p>Algunos productos destacados. Podemos reemplazar estos ejemplos por tus accesorios reales, fotos, precios y stock.</p></div>
   <div class="products">
-    <article><div class="product-image p1">✦</div><div class="info"><small>DESTACADO</small><h3>Accesorio Aura</h3><p>Diseño delicado para todos los días.</p><button onclick="consultar('Accesorio Aura')">Consultar →</button></div></article>
-    <article><div class="product-image p2">♡</div><div class="info"><small>NUEVO</small><h3>Set Lavanda</h3><p>Una combinación suave y elegante.</p><button onclick="consultar('Set Lavanda')">Consultar →</button></div></article>
-    <article><div class="product-image p3">◇</div><div class="info"><small>CLÁSICO</small><h3>Detalle Lila</h3><p>Minimalista, femenino y versátil.</p><button onclick="consultar('Detalle Lila')">Consultar →</button></div></article>
-    <article><div class="product-image p4">✧</div><div class="info"><small>FAVORITO</small><h3>Charm Violeta</h3><p>El toque final para tu look.</p><button onclick="consultar('Charm Violeta')">Consultar →</button></div></article>
+    <article><div class="product-image p1">✦</div><div class="info"><small>DESTACADO</small><h3>Accesorio Aura</h3><p>Diseño delicado para todos los días.</p><div class="product-bottom"><b>$12.990</b><button class="add-cart" data-id="aura">Agregar 🛒</button></div></div></article>
+    <article><div class="product-image p2">♡</div><div class="info"><small>NUEVO</small><h3>Set Lavanda</h3><p>Una combinación suave y elegante.</p><div class="product-bottom"><b>$18.990</b><button class="add-cart" data-id="lavanda">Agregar 🛒</button></div></div></article>
+    <article><div class="product-image p3">◇</div><div class="info"><small>CLÁSICO</small><h3>Detalle Lila</h3><p>Minimalista, femenino y versátil.</p><div class="product-bottom"><b>$10.990</b><button class="add-cart" data-id="lila">Agregar 🛒</button></div></div></article>
+    <article><div class="product-image p4">✧</div><div class="info"><small>FAVORITO</small><h3>Charm Violeta</h3><p>El toque final para tu look.</p><div class="product-bottom"><b>$14.990</b><button class="add-cart" data-id="violeta">Agregar 🛒</button></div></div></article>
   </div>
 </section>
 
@@ -45,6 +45,10 @@
  <div><small>03 — CONTACTO</small><h2>¿Qué estás<br><em>buscando?</em></h2><p>Escribinos para consultar por productos, disponibilidad o pedidos personalizados.</p></div>
  <div class="links"><a href="#"><b>WhatsApp</b><span>Consultar por productos →</span></a><a href="#"><b>Instagram</b><span>@rti.creaciones →</span></a><a href="mailto:contacto@rticreaciones.com"><b>Email</b><span>contacto@rticreaciones.com →</span></a></div>
 </section>
+
+<div id="cart-overlay" class="cart-overlay" onclick="cerrarCarrito()"></div>
+<aside id="cart-drawer" class="cart-drawer"><div class="cart-head"><div><small>RTI CREACIONES</small><h3>Tu carrito</h3></div><button onclick="cerrarCarrito()">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-foot"><div class="total"><span>Total</span><strong id="cart-total">$0</strong></div><button id="checkout-btn" class="checkout" onclick="finalizar()" disabled>Finalizar compra →</button><button class="clear" onclick="vaciar()">Vaciar carrito</button></div></aside>
+<div id="checkout-modal" class="modal"><div class="modal-card"><button class="modal-close" onclick="cerrarCheckout()">×</button><small>FINALIZAR COMPRA</small><h2>Datos del <em>pedido.</em></h2><p>Completá tus datos y te enviaremos el pedido para coordinar el pago y la entrega.</p><form onsubmit="enviarPedido(event)"><label>Nombre completo<input id="cliente" required placeholder="Tu nombre"></label><label>WhatsApp / teléfono<input id="contacto-cliente" required placeholder="11 1234 5678"></label><label>Entrega<select id="entrega"><option>Retiro / coordinar</option><option>Envío a domicilio</option></select></label><button class="checkout" type="submit">Enviar pedido →</button></form><small class="note">El pago online con tarjeta/Mercado Pago se puede conectar después con las credenciales de tu tienda.</small></div></div>
 </main>
 
 <footer><img src="logo.png" alt="RTI Creaciones"><span>ACCESORIOS · DETALLES · ESTILO</span><span>© 2026</span></footer>
